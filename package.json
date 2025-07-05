@@ -1,0 +1,32 @@
+{
+  "name": "@elias4044/portfolio-template",
+  "version": "1.0.0",
+  "description": "A customizable HTML/CSS/JS portfolio generator via a simple JS function.",
+  "main": "index.js",
+  "type": "module",
+  "exports": {
+    ".": "./index.js"
+  },
+  "bin": {
+    "create-portfolio": "./cli.js"
+  },
+  "scripts": {
+    "start": "node generate.js",
+    "test": "node generate.js"
+  },
+  "keywords": [
+    "portfolio",
+    "static-site-generator",
+    "template",
+    "html-css-js",
+    "ejs",
+    "cli-tool"
+  ],
+  "author": "Elias",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "fs-extra": "^11.1.1",
+    "prompts": "^2.4.2"
+  }
+}

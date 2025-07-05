@@ -1,0 +1,19 @@
+{
+  "type": "module",
+  "name": "my-portfolio",
+  "version": "1.0.0",
+  "description": "My portfolio, generated using my-portfolio template by elias4044 on nodejs.",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.0.1",
+    "express": "^5.1.0",
+    "node-fetch": "^3.3.2"
+  }
+}

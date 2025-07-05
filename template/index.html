@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        <%= name || "Your Name" %> - Portfolio
+    </title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">
+                    <%= name || "Portfolio" %>
+                </span>
+                <div class="logo-dots">
+                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#collaborate" class="nav-link">Collaborate</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="dot-pattern" style="transform: translateY(0px);"></div>
+            <div class="floating-dots"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-line">Hello, I'm</span>
+                <span class="title-name">
+                    <%= name || "Your Name" %>
+                </span>
+                <span class="title-subtitle">
+                    <%= role || "Web Developer" %>
+                </span>
+            </h1>
+            <p class="hero-description">
+                <%= description
+                    || "Crafting digital experiences with passion and precision. Turning ideas into reality through code."
+                    %>
+            </p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToSection('projects')">View My Work <span
+                        class="btn-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span></button>
+                <button class="btn btn-secondary" onclick="scrollToSection('contact')">Get In Touch</button>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-dot"></div>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <div class="title-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-intro">
+                        <%= about
+                            || "I'm a passionate developer who loves creating beautiful, functional, and user-friendly digital experiences."
+                            %>
+                    </p>
+                    <div class="skills-grid">
+                        <% (skills || ["Frontend Development", "Backend Development" , "UI/UX Design"
+                            , "Mobile Development" , "Game Development" ]).forEach(skill=> { %>
+                            <div class="skill-item fade-in visible">
+                                <div class="skill-dot"></div>
+                                <span>
+                                    <%= skill %>
+                                </span>
+                            </div>
+                            <% }) %>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <% (stats || [ { number: "10+" , label: "Projects Completed" }, { number: "2+" ,
+                        label: "Years Experience" }, { number: "0.1$" , label: "Money Earned Total" } ]).forEach(stat=>
+                        { %>
+                        <div class="stat-item fade-in visible">
+                            <div class="stat-number">
+                                <%= stat.number %>
+                            </div>
+                            <div class="stat-label">
+                                <%= stat.label %>
+                            </div>
+                            <div class="stat-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <% }) %>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="title-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+
+            <div class="projects-grid">
+                <% (projects || []).forEach(project=> { %>
+                    <div class="project-card">
+                        <div class="project-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">
+                                <%= project.name || "Untitled Project" %>
+                            </h3>
+                            <p class="project-description">
+                                <%= project.description || "No description." %>
+                            </p>
+                            <div class="project-tech">
+                                <% (project.tech || []).forEach(t=> { %>
+                                    <span class="tech-tag">
+                                        <%= t %>
+                                    </span>
+                                    <% }) %>
+                            </div>
+                            <div class="project-links">
+                                <% if (project.website) { %><a href="<%= project.website %>" target="_blank"
+                                        class="project-link">Website</a>
+                                    <% } %>
+                                        <% if (project.github) { %><a href="<%= project.github %>" target="_blank"
+                                                class="project-link">GitHub</a>
+                                            <% } %>
+                            </div>
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collaborate Section -->
+    <section id="collaborate" class="collaborate">
+        <div class="container">
+            <div class="collaborate-text">
+                <h2 class="section-title">Let's Collaborate</h2>
+                <p class="collaborate-description">
+                    <%= collaborateText || "I'm always excited to work on new projects. Let’s connect!" %>
+                </p>
+                <div class="collaborate-features">
+                    <% (collaborateFeatures || ["Open Source", "Freelance" , "Teams" ]).forEach(feature=> { %>
+                        <div class="feature-item"><span class="feature-dot"></span>
+                            <%= feature %>
+                        </div>
+                        <% }) %>
+                </div>
+            </div>
+            <div class="collaborate-visual">
+                <div class="collab-dots-container">
+                    <div class="collab-dot large"></div>
+                    <div class="collab-dot medium"></div>
+                    <div class="collab-dot small"></div>
+                    <div class="collab-dot tiny"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="title-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <% (contacts || [ { method: "Email" , link: "mailto:your@email.com" , label: "your@email.com" }, {
+                        method: "GitHub" , link: "https://github.com/yourusername" , label: "yourusername" }
+                        ]).forEach(contact=> { %>
+                        <div class="contact-item fade-in visible">
+                            <div class="contact-icon">
+                                <div class="icon-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                            </div>
+                            <div class="contact-details">
+                                <h3>
+                                    <%= contact.method %>
+                                </h3>
+                                <a href="<%= contact.link %>" target="_blank">
+                                    <%= contact.label %>
+                                </a>
+                            </div>
+                        </div>
+                        <% }) %>
+                </div>
+
+                <% if (enableContactForm) { %>
+                    <div class="contact-form">
+                        <form class="form" method="POST" action="/contact">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" required>
+                                <label for="name">Your Name</label>
+                                <div class="input-dots"><span></span><span></span><span></span></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" required>
+                                <label for="email">Your Email</label>
+                                <div class="input-dots"><span></span><span></span><span></span></div>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" name="message" required></textarea>
+                                <label for="message">Your Message</label>
+                                <div class="input-dots"><span></span><span></span><span></span></div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                Send Message
+                                <span class="btn-dots"><span></span><span></span><span></span></span>
+                            </button>
+                        </form>
+                    </div>
+                    <% } %>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <%= new Date().getFullYear() %>
+                    <%= name || "Your Name" %>. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
