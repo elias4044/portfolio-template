@@ -1,7 +1,10 @@
-
 # Portfolio Template Generator
-
 A modern, customizable portfolio website generator. Instantly create a beautiful, interactive HTML/CSS/JS portfolio with your own projects and contact info—no coding required!
+
+[Live Demo](https://elias4044.vercel.app/) · [NPM Package](https://www.npmjs.com/package/@elias4044/portfolio-template)
+<br>
+<br>
+![Preview Of Website](https://elias4044.vercel.app/assets/preview.png)
 
 ## Features
 - **Easy CLI:** Answer a few prompts and generate your portfolio in seconds
@@ -94,7 +97,6 @@ template/             # HTML/CSS/JS template
     vercel-function-contact.js # Vercel serverless function
   favicon/            # Icons
 ```
-
 ## Environment Variables
 Create a `.env` file in the root:
 ```
@@ -102,6 +104,11 @@ ENABLE_CONTACT_FORM=true
 DISCORD_WEBHOOK_URL=your_discord_webhook_url_here
 PORT=3000
 ```
+
+## Contributing
+Contributions are welcome! If you have a suggestion or want to fix a bug, please feel free to open an issue or submit a pull request.
+
+Please read the [Contributing Guidelines](https://github.com/elias4044/portfolio-template/blob/main/.github/CONTRIBUTING.md) for details on the code of conduct and the process for submitting pull requests.
 
 ## License
 MIT
