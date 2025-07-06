@@ -107,4 +107,4 @@ PORT=3000
 MIT
 
 ---
-Portfolio generator by Elias ([@repulsord](https://github.com/repulsord))
+Portfolio generator by Elias ([@elias4044](https://github.com/elias4044))
