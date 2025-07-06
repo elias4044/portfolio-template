@@ -4,8 +4,12 @@
   "description": "A customizable HTML/CSS/JS portfolio generator via a simple JS function.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/repulsord/portfolio-template.git"
+    "url": "https://github.com/elias4044/portfolio-template.git"
   },
+  "bugs": {
+    "url": "https://github.com/elias4044/portfolio-template/issues"
+  },
+  "homepage": "https://github.com/elias4044/portfolio-template#readme",
   "main": "index.js",
   "type": "module",
   "exports": {
