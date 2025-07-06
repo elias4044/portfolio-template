@@ -3,7 +3,7 @@
 // Example usage of the portfolio generator for Node.js projects.
 // Run this script to generate a portfolio with the data below.
 
-import { createPortfolio } from './index.js';
+import { createPortfolio } from '../index.js';
 
 // Call the generator with your custom data
 createPortfolio({
